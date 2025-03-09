@@ -13,7 +13,7 @@ process_file() {
   ffmpeg -i "$input_file" -filter:a "asetrate=44100*$speed,aresample=44100" -vn "temp_slowed_${speed}_${reverb}_${low_pass_freq}.mp3"
   sox "temp_slowed_${speed}_${reverb}_${low_pass_freq}.mp3" "temp_low_pass_${speed}_${reverb}_${low_pass_freq}.mp3" lowpass "$low_pass_freq"
   sox "temp_low_pass_${speed}_${reverb}_${low_pass_freq}.mp3" "$output_file" reverb "$reverb" 0.5 100 100 0 0
-  rm "temp_slowed_${speed}_${reverb}_${low_pass_freq}.mp3" "temp_low_pass_${speed}_${reverb}_${low_pass_freq}.mp3"
+  #rm "temp_slowed_${speed}_${reverb}_${low_pass_freq}.mp3" "temp_low_pass_${speed}_${reverb}_${low_pass_freq}.mp3"
 }
 
 export -f process_file
@@ -57,6 +57,6 @@ for speed in 0.8 0.9 1.0; do
   done
 done
 
-echo "$jobs" | parallel --colsep ' ' --bar process_file {1} {2} {3} "$input_file" "$output_folder" "$filename_no_ext"
+echo "$jobs" | parallel --colsep ' ' --bar process_file {1} {2} {3} "$input_file" "./" "$filename_no_ext"
 
-zenity --info --title="Doomer Mixes Ready" --text="All doomer mixes generated in folder: $output_folder"
+zenity --info --title="Doomer Mixes Ready" --text="All doomer mixes generated in folder: ./"
