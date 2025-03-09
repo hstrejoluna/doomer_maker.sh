@@ -8,12 +8,37 @@ process_file() {
   output_folder="$5"
   filename_no_ext="$6"
 
+  # Ensure output folder exists
+  mkdir -p "$output_folder"
+
+  # Create full output path
   output_file="${output_folder}/${filename_no_ext}_speed${speed}_reverb${reverb}_lowpass${low_pass_freq}.mp3"
   
+  # Get duration of input file
+  duration=$(ffprobe -i "$input_file" -show_entries format=duration -v quiet -of csv="p=0")
+  
+  # Generate vinyl noise
+  sox -n "temp_vinyl_noise_${speed}_${reverb}_${low_pass_freq}.wav" synth "$duration" pinknoise vol 0.015
+  
+  # Process the original audio with speed change and resampling
   ffmpeg -i "$input_file" -filter:a "asetrate=44100*$speed,aresample=44100" -vn "temp_slowed_${speed}_${reverb}_${low_pass_freq}.mp3"
+  
+  # Apply lowpass filter
   sox "temp_slowed_${speed}_${reverb}_${low_pass_freq}.mp3" "temp_low_pass_${speed}_${reverb}_${low_pass_freq}.mp3" lowpass "$low_pass_freq"
-  sox "temp_low_pass_${speed}_${reverb}_${low_pass_freq}.mp3" "$output_file" reverb "$reverb" 0.5 100 100 0 0
-  #rm "temp_slowed_${speed}_${reverb}_${low_pass_freq}.mp3" "temp_low_pass_${speed}_${reverb}_${low_pass_freq}.mp3"
+  
+  # Apply reverb
+  sox "temp_low_pass_${speed}_${reverb}_${low_pass_freq}.mp3" "temp_reverb_${speed}_${reverb}_${low_pass_freq}.mp3" reverb "$reverb" 0.5 100 100 0 0
+  
+  # Mix the vinyl noise with the processed audio and ensure it's saved as MP3
+  sox -m "temp_reverb_${speed}_${reverb}_${low_pass_freq}.mp3" "temp_vinyl_noise_${speed}_${reverb}_${low_pass_freq}.wav" -t mp3 "$output_file"
+  
+  # Verify the file was created
+  if [ ! -f "$output_file" ]; then
+    echo "Error: Failed to create output file: $output_file"
+    exit 1
+  fi
+  
+ 
 }
 
 export -f process_file
@@ -57,6 +82,7 @@ for speed in 0.8 0.9 1.0; do
   done
 done
 
-echo "$jobs" | parallel --colsep ' ' --bar process_file {1} {2} {3} "$input_file" "./" "$filename_no_ext"
+# Use the actual output folder path instead of "./"
+echo "$jobs" | parallel --colsep ' ' --bar process_file {1} {2} {3} "$input_file" "$output_folder" "$filename_no_ext"
 
-zenity --info --title="Doomer Mixes Ready" --text="All doomer mixes generated in folder: ./"
+zenity --info --title="Doomer Mixes Ready" --text="All doomer mixes generated in folder: $output_folder"
