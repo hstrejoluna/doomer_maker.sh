@@ -1,0 +1,62 @@
+[2025-03-15 16:23:08] [INFO ] ========================================================
+[2025-03-15 16:23:08] [INFO ] Doomer Maker v2.0.0
+[2025-03-15 16:23:08] [INFO ] ========================================================
+[2025-03-15 16:23:08] [DEBUG] Debug level: 1
+[2025-03-15 16:23:08] [DEBUG] Temporary directory: /home/hstrejoluna/Sites/doomer_maker.sh/.doomer_tmp_88650
+[2025-03-15 16:23:08] [DEBUG] Log file: /home/hstrejoluna/Sites/doomer_maker.sh/doomer_maker_88650.log
+[2025-03-15 16:23:08] [DEBUG] System information:
+[2025-03-15 16:23:08] [INFO ] Checking system dependencies
+[2025-03-15 16:23:08] [DEBUG] Found ffmpeg at: /usr/bin/ffmpeg
+    ffmpeg version n7.0.2 Copyright (c) 2000-2024 the FFmpeg developers
+[2025-03-15 16:23:08] [DEBUG] Found sox at: /usr/bin/sox
+    sox:      SoX v14.4.2
+[2025-03-15 16:23:08] [DEBUG] Found zenity at: /usr/bin/zenity
+[2025-03-15 16:23:08] [OK   ] All dependencies are available
+[2025-03-15 16:23:08] [INFO ] Waiting for input file selection
+[2025-03-15 16:23:15] [DEBUG] Selected input file: /home/hstrejoluna/Downloads/MASTER_tengomisgrietas_271224.mp3
+[2025-03-15 16:23:15] [INFO ] Processing file: /home/hstrejoluna/Downloads/MASTER_tengomisgrietas_271224.mp3
+[2025-03-15 16:23:15] [DEBUG] Testing input file with ffmpeg
+[2025-03-15 16:23:15] [INFO ] Waiting for output folder selection
+[2025-03-15 16:23:20] [DEBUG] Selected output folder: /home/hstrejoluna/Music/doomers
+[2025-03-15 16:23:20] [INFO ] Waiting for number of mixes input
+[2025-03-15 16:23:23] [INFO ] Starting processing of 2 mixes...
+[2025-03-15 16:23:23] [DEBUG] Using input file: /home/hstrejoluna/Downloads/MASTER_tengomisgrietas_271224.mp3
+[2025-03-15 16:23:23] [DEBUG] Output folder: /home/hstrejoluna/Music/doomers
+[2025-03-15 16:23:23] [DEBUG] Base filename: MASTER_tengomisgrietas_271224
+[2025-03-15 16:23:23] [INFO ] Processing 2 mixes with progress bar
+[2025-03-15 16:23:23] [INFO ] Processing mix 1 of 2
+[2025-03-15 16:23:23] [INFO ] Processing mix 1/2: Speed=0.8, Reverb=50, Lowpass=100
+[2025-03-15 16:23:23] [DEBUG] Raw duration output: 180.924050
+[2025-03-15 16:23:23] [INFO ] Processing audio with duration: 180.924050s
+[2025-03-15 16:23:23] [INFO ] Generating vinyl crackle effect (180.924050s)
+[2025-03-15 16:23:24] [DEBUG] Vinyl crackle successfully generated
+[2025-03-15 16:23:24] [INFO ] Applying speed change (0.8x)
+[2025-03-15 16:23:27] [DEBUG] Speed change applied: /home/hstrejoluna/Sites/doomer_maker.sh/.doomer_tmp_88650/mix_0.8_50_100/speed.mp3
+[2025-03-15 16:23:27] [INFO ] Applying lowpass filter (100Hz)
+[2025-03-15 16:23:30] [DEBUG] Lowpass filter applied: /home/hstrejoluna/Sites/doomer_maker.sh/.doomer_tmp_88650/mix_0.8_50_100/lowpass.mp3
+[2025-03-15 16:23:30] [INFO ] Applying reverb effect (50%)
+[2025-03-15 16:23:33] [DEBUG] Reverb effect applied: /home/hstrejoluna/Sites/doomer_maker.sh/.doomer_tmp_88650/mix_0.8_50_100/reverb.mp3
+[2025-03-15 16:23:33] [INFO ] Mixing audio with vinyl effect
+[2025-03-15 16:23:36] [DEBUG] Mixed using ffmpeg: /home/hstrejoluna/Music/doomers/MASTER_tengomisgrietas_271224_speed0.8_reverb50_lowpass100.mp3
+[2025-03-15 16:23:36] [DEBUG] Output file size: 5429959 bytes
+[2025-03-15 16:23:36] [OK   ] Created: MASTER_tengomisgrietas_271224_speed0.8_reverb50_lowpass100.mp3
+[2025-03-15 16:23:36] [INFO ] Processing mix 2 of 2
+[2025-03-15 16:23:36] [INFO ] Processing mix 2/2: Speed=0.8, Reverb=50, Lowpass=200
+[2025-03-15 16:23:36] [DEBUG] Raw duration output: 180.924050
+[2025-03-15 16:23:36] [INFO ] Processing audio with duration: 180.924050s
+[2025-03-15 16:23:36] [INFO ] Generating vinyl crackle effect (180.924050s)
+[2025-03-15 16:23:36] [DEBUG] Vinyl crackle successfully generated
+[2025-03-15 16:23:36] [INFO ] Applying speed change (0.8x)
+[2025-03-15 16:23:40] [DEBUG] Speed change applied: /home/hstrejoluna/Sites/doomer_maker.sh/.doomer_tmp_88650/mix_0.8_50_200/speed.mp3
+[2025-03-15 16:23:40] [INFO ] Applying lowpass filter (200Hz)
+[2025-03-15 16:23:42] [DEBUG] Lowpass filter applied: /home/hstrejoluna/Sites/doomer_maker.sh/.doomer_tmp_88650/mix_0.8_50_200/lowpass.mp3
+[2025-03-15 16:23:42] [INFO ] Applying reverb effect (50%)
+[2025-03-15 16:23:46] [DEBUG] Reverb effect applied: /home/hstrejoluna/Sites/doomer_maker.sh/.doomer_tmp_88650/mix_0.8_50_200/reverb.mp3
+[2025-03-15 16:23:46] [INFO ] Mixing audio with vinyl effect
+[2025-03-15 16:23:49] [DEBUG] Mixed using ffmpeg: /home/hstrejoluna/Music/doomers/MASTER_tengomisgrietas_271224_speed0.8_reverb50_lowpass200.mp3
+[2025-03-15 16:23:49] [DEBUG] Output file size: 5429959 bytes
+[2025-03-15 16:23:49] [OK   ] Created: MASTER_tengomisgrietas_271224_speed0.8_reverb50_lowpass200.mp3
+[2025-03-15 16:23:49] [OK   ] Processing complete. Generated 2 mixes in: /home/hstrejoluna/Music/doomers
+[2025-03-15 16:23:52] [INFO ] Processing complete. Output files are in: /home/hstrejoluna/Music/doomers
+[2025-03-15 16:23:52] [INFO ] Log file available at: /home/hstrejoluna/Sites/doomer_maker.sh/doomer_maker_88650.log
+[2025-03-15 16:23:52] [INFO ] Cleaning up temporary files

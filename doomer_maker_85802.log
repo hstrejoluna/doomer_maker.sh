@@ -1,0 +1,27 @@
+[2025-03-15 16:19:42] [INFO ] ========================================================
+[2025-03-15 16:19:42] [INFO ] Doomer Maker v2.0.0
+[2025-03-15 16:19:42] [INFO ] ========================================================
+[2025-03-15 16:19:42] [DEBUG] Debug level: 1
+[2025-03-15 16:19:42] [DEBUG] Temporary directory: /home/hstrejoluna/Sites/doomer_maker.sh/.doomer_tmp_85802
+[2025-03-15 16:19:42] [DEBUG] Log file: /home/hstrejoluna/Sites/doomer_maker.sh/doomer_maker_85802.log
+[2025-03-15 16:19:42] [DEBUG] System information:
+[2025-03-15 16:19:42] [INFO ] Checking system dependencies
+[2025-03-15 16:19:42] [DEBUG] Found ffmpeg at: /usr/bin/ffmpeg
+    ffmpeg version n7.0.2 Copyright (c) 2000-2024 the FFmpeg developers
+[2025-03-15 16:19:43] [DEBUG] Found sox at: /usr/bin/sox
+    sox:      SoX v14.4.2
+[2025-03-15 16:19:43] [DEBUG] Found zenity at: /usr/bin/zenity
+[2025-03-15 16:19:43] [OK   ] All dependencies are available
+[2025-03-15 16:19:43] [INFO ] Waiting for input file selection
+[2025-03-15 16:19:48] [DEBUG] Selected input file: /home/hstrejoluna/Downloads/MASTER_tengomisgrietas_271224.mp3
+[2025-03-15 16:19:48] [INFO ] Processing file: /home/hstrejoluna/Downloads/MASTER_tengomisgrietas_271224.mp3
+[2025-03-15 16:19:48] [DEBUG] Testing input file with ffmpeg
+[2025-03-15 16:19:48] [INFO ] Waiting for output folder selection
+[2025-03-15 16:20:02] [DEBUG] Selected output folder: /home/hstrejoluna/Music/doomers
+[2025-03-15 16:20:02] [INFO ] Waiting for number of mixes input
+[2025-03-15 16:20:05] [INFO ] Starting processing of 2 mixes...
+[2025-03-15 16:20:05] [DEBUG] Using input file: /home/hstrejoluna/Downloads/MASTER_tengomisgrietas_271224.mp3
+[2025-03-15 16:20:05] [DEBUG] Output folder: /home/hstrejoluna/Music/doomers
+[2025-03-15 16:20:05] [DEBUG] Base filename: MASTER_tengomisgrietas_271224
+[2025-03-15 16:20:05] [INFO ] Processing 2 mixes with progress bar
+[2025-03-15 16:20:05] [INFO ] Cleaning up temporary files
